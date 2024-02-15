@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head.ejs") %>
+<body>
+    <%- include("header.ejs") %>
+    <div>
+        <div class="header-container">
+            <div class="item-container">
+                <!-- left container -->
+                <div class="item-left-container">
+                    <!-- image container -->
+					<div class="item-upper-left-container">
+						<div class="item-image-container">
+							<!-- display image -->
+							<div id="image-container"></div>
+							<!-- image slideshow -->
+							<div id="image-slideshow">
+								<div class="small-item-image-container" id="add-image-button">+</div>
+							</div>
+						</div>
+						<input type="text" placeholder="Tên sản phẩm">
+					</div>
+                </div>
+                <!-- right container -->
+                <div class="item-right-container">
+                    <h2>Giá thành</h2>
+                    <input type="number" placeholder="Giá thành sản phẩm">
+                    <h2>Giảm giá</h2>
+                    <div>
+                        <i class="button button-green">Accept</i>
+                        <i class="button button-red">Decline</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs") %>
+</body>
+</html>
+<script src="edit.js"></script>

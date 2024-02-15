@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="management.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="left-menu">
+        <div><img class="logo" src="Artifact-logos/Artifact-logos_transparent.png" alt=""></div>
+        <div>Main</div>
+        <ul>
+            <li>Dashboard</li>
+            <li>Products</li>
+            <li>Accounts</li>
+            <li>Customers</li>
+        </ul>
+        <div>Others</div>
+        <ul></ul>
+        <div>Setting</div>
+        <ul></ul>
+    </div>
+    <div class="right-container">
+        <div class="header">
+            <h1>Inventory</h1>
+            <div>
+                <i class="button">Export</i>
+                <i id="add-item-button" class="button">Add Item</i>
+            </div>
+        </div>
+        <div id="item-table" class="table">
+            <div class="header">
+                <input type="text" placeholder="Search">
+                <div class="drop collapsed">
+                    <div>Filter</div>
+                    <div>hiddent content</div>
+                </div>
+                <i id="item-table-refresh-button" class="button">Refresh</i>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>No.</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="header">
+                <div>
+                    Show <input id="item-per-page-input" class="small-number-input" type="text" value="10" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')"> items
+                </div>
+                <div>
+                    <input id="item-page-number" class="small-number-input" type="text" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')">
+                    /
+                    <span id="item-total-page-number"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-item-overlay" class="overlay-container hidden">
+        <div>
+            <div>
+                <h1>Products Name</h1>
+                <div><input id="item-name" type="text" placeholder="Product name"></div>
+                <div><input id="item-unit" type="text" placeholder="Product type"></div>
+                <div>
+                    <input id="item-price" type="text" placeholder="Selling Price">
+                    <div class="inline-break"></div>
+                    <input type="text" placeholder="Import Price">
+                </div>
+                <div><input id="item-stock" type="text" placeholder="Quantity in stock"></div>
+                <h1>Discount</h1>
+                <div>
+                    <div class="drop collapsed">
+                        <div>Discount type</div>
+                        <div>
+                            <div>Percentage</div>
+                            <div>Fixed Amount</div>
+                        </div>
+                    </div>
+                    <div class="inline-break"></div>
+                    <input type="text" placeholder="Value">
+                </div>
+                <div>Product description</div>
+                <textarea id="item-description"></textarea>
+            </div>
+            <div>
+                <div>
+                    <div id="accept-item-button" class="button green-button">Accept</div>
+                    <div id="decline-item-button" class="button red-button">Decline</div>
+                </div>
+                <div id="image-display"></div>
+                <div id="image-slideshow">
+                    <div id="add-image-button">
+                        <img src="upload.svg">
+                        Upload image
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="message-container"></div>
+</body>
+</html>
+<script src="management.js"></script>

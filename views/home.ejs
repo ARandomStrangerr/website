@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head.ejs") %>
+<body>
+    <%- include("header.ejs") %>
+    <!-- banner -->
+    <div id="banner">
+        <div class="header-container">
+            <div id="left-banner"></div>
+            <div id="right-banner"></div>
+        </div>
+    </div>
+    <!-- products -->
+    <div id="feature-product">
+        <div class="header-container">
+            <% for(let item of items) { %>
+                <a href=<%- `${address}/item/${item["_id"]}` %>>
+                    <div class="product-card">
+                        <div>
+                            <img src=<%- `${address}/management/download-image/${item.img[0]}` %>>
+                        </div>
+                        <div>
+                            <%- item.name %>
+                        </div>
+                        <div>
+                            <div class="money-text"><%- item.price %></div>
+                        </div>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    </div>
+    <%- include("footer.ejs") %>
+</body>
+</html>

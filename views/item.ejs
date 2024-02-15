@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head.ejs") %>
+<body>
+    <%- include("header.ejs") %>
+    <div class="item-container header-container">
+        <!-- left item container -->
+        <div>
+            <!-- left top item container -->
+            <div>
+                <!-- image display -->
+                <div>
+                    <div class="image-display"><img src=<%- `${assessWithRender.address}/management/download-image/${item.img[0]}` %>></div>
+                    <div class="image-slideshow">
+                        <% for(let img of item.img) { %>
+                            <div class="image-slideshow-item">
+                                <img src=<%- `${assessWithRender.address}/management/download-image/${img}` %>>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+                <!-- text display -->
+                <div>
+                    <h1><%- item.name %></h1>
+                </div>
+            </div>
+            <!-- left bottom item description -->
+            <div>
+
+            </div>
+        </div>
+        <!-- right item container -->
+        <div>
+            <div>Giá sản phẩm</div>
+            <div class="money-text"><%- item.price %></div>
+            <div><%- item.unit %></div>
+        </div>
+    </div>
+    <%- include("footer.ejs") %>
+</body>
+</html>
